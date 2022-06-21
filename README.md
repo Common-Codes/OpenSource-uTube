@@ -8,7 +8,7 @@
 - [firebase/auth, firebase/firestore & firebase/rules](https://firebase.google.com) - 'Cloud' and Account Authority
 
 ### Storage Bukkets:
-- [firebase/storage](https://firebase.google.com) 10G Free additional Cloud Storage (above the 15G already used)
+- [firebase/storage](https://firebase.google.com) 10G Free additional Cloud Storage (above the 15G already provided)
 - VS1/V1RU5
 
 ### Some description:
