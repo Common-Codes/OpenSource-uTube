@@ -1,14 +1,18 @@
 window.onload = function(){
-    const content = document.getElementById("master-div");
+    const maestro = document.getElementById("master-div");
     const fragment = new URLSearchParams(window.location.hash.slice(1));
     const [channel, debug] = [fragment.get('user'), fragment.get('dev')];
 
-    if(channel != null){
+    if(channel != null){2 //store is a global var = firestore
         store.collection("c").where("channel", "==", channel)
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    content.innerHTML = `<p>We told u this was in dev</p>`;
+                    maestro.innerHTML = `<p>Still WIP</p>`;
         });
+    })
+    .catch((error) => {
+        window.alert("Error getting data: ", error);
+    });
     }
 }
