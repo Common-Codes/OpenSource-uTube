@@ -7,10 +7,15 @@
 <!-- - [ffmpeg](https://ffmpeg.org) Will this be used? -->
 - [firebase/auth, firebase/firestore & firebase/rules](https://firebase.google.com) - 'Cloud' and Account Authority
 - [verbose](https://verbose.crispychat.tech) Lightweight Image Proxy
+- [Self-Hosted Plausible](https://plausible.io/docs/self-hosting) for completely anonymous site statistics
 
 ### Storage Bukkets:
+#### Video
 - [firebase/storage](https://firebase.google.com) 10G Free additional Cloud Storage (above the 15G already provided)
-- VS1/V1RU5
+- VS1/V1RU5 (V1RU5's up-until-now unused VPS)
+#### Image
+- [ut3.ggpht.ga](https://ggpht.ga/) The third uTube CDN (github pages site with some site images)
+- [Discord](https://discord.com) [Join the server](https://discord.com/invite/Wh2zxEfYaB) to find out more
 
 ### Some description:
 - Upload content.
