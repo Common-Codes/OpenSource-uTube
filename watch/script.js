@@ -4,7 +4,7 @@ window.onload = function() {
     const [video, debug] = [fragment.get('vid'), fragment.get('dev')];
 
     if(video != null){
-        store.collection("vid").where("id", "==", video)
+        store.collection("vid").where("vod", "==", video)
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
