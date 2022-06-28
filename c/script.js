@@ -8,7 +8,8 @@ window.onload = function(){
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    maestro.innerHTML = `<p>Still WIP</p>`;
+                    const water = doc.data()
+                    maestro.innerHTML = `<p>${water.channel}</p>`;
         });
     })
     .catch((error) => {
