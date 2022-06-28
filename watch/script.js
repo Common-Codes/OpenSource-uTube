@@ -4,11 +4,12 @@ window.onload = function() {
     const [video, debug] = [fragment.get('vid'), fragment.get('dev')];
 
     if(video != null){
-        store.collection("vid").where("vod", "==", video)
+        store.collection("vid").where("id", "==", video)
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    maestro.innerHTML = `<video style="width: 100%;" controls><source src="${doc.src}" type="video/mp4">Your Browser does not support HTML video tags</video><br><p>${doc.title} by <a href="https://common-codes.github.io/OpenSource-uTube/c/#user=TallerThanShort">${doc.uploader}</a></p>`;
+                    const vdata = doc.data()
+                    maestro.innerHTML = `<video style="width: 100%;" controls><source src="${vdata.src}" type="video/mp4">Your Browser does not support HTML video tags</video><br><p>${vdata.title} by <a href="https://common-codes.github.io/OpenSource-uTube/c/#user=${vdata.uploader}">${vdata.uploader}</a></p>`;
         });
     })
     .catch((error) => {
