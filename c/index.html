@@ -31,10 +31,20 @@
     </script>
     <script src="script.js"></script>
 </head>
-<body>
-    <div id="master-div">
-        <div id="search-div" class="utd-search" style="position: absolute; top: 0;">
-            <input type="text" placeholder="Find something interesting..."></input>
+<body style="background-color: black; color: white;">
+    <div id="search-div" style="position: absolute; top: 0;">
+        <input type="text" placeholder="Find something interesting..." style="width: 100%;"></input>
+    </div>
+    <div id="master-div" style="position: absolute; top: 30px;">
+        <div id="profile-banner">
+            <img src="https://http.cat/404" style="width: 100%;">
+        </div>
+        <br>
+        <div id="profile" style="position: relative;">
+             <img src="https://ggpht.ga/icons/DEV_new.png" style="height: 29px; width: 29px; position: absolute; top: 16px; left: 5px;">
+             <button style="position: absolute; top: 18px; right: 16px; background-color: lightgray; color: black; height: 35px; width: 25%;">FOLLOWING</button>
+             <p id="name" style="position: absolute; top: 6px; left: 48px;">DEV_new</p>
+             <p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">followers</p>
         </div>
     </div>
 </body>
