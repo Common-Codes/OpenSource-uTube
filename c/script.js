@@ -9,7 +9,7 @@ window.onload = function(){
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const water = doc.data()
-                    maestro.innerHTML = `<p>${water.channel}</p>`;
+                    maestro.innerHTML = `<div id="profile-banner"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 29px; width: 29px; position: absolute; top: 16px; left: 5px;"><button style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button><p id="name" style="position: absolute; top: 6px; left: 48px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers}</p></div>`;
         });
     })
     .catch((error) => {
