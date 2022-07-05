@@ -1,5 +1,6 @@
 window.onload = function(){
     const maestro = document.getElementById("master-div");
+    const maestroContent = document.getElementById("videos");
     const fragment = new URLSearchParams(window.location.hash.slice(1));
     const [channel, debug] = [fragment.get('user'), fragment.get('dev')];
 
@@ -15,5 +16,14 @@ window.onload = function(){
     .catch((error) => {
         window.alert("Error getting data: ", error);
     });
+    }
+
+    if(channel != null){
+        store.collection("vid").where("channel", "==", channel)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const vdata = doc.data()
+                    maestroContent.innerHTML += pig;
     }
 }
