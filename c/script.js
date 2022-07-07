@@ -26,5 +26,6 @@ window.onload = function(){
                     const vdata = doc.data()
                     const pig = `<div onclick="location.href='https://common-codes.github.io/OpenSource-uTube/watch/#vid=${vdata.id}'" class="video-data" style="position: relative;"><img src="${vdata.vod}" style="height: 90px; width: 150px; position: absolute; left: 5px;"><b class="video-title" style="position: absolute; left: 160px; top: 8px;">${vdata.title}</b></div><br>`;
                     maestroContent.innerHTML += pig;
+    })})
     }
 }
