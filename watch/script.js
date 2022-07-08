@@ -21,10 +21,12 @@ window.onload = function() {
 const followFunction = () => {
     const toflow = document.getElementById("channelname").innerText;
     const flowbtn = document.getElementById("flowbtn");
-    const user = firebase.auth.currentuser //or something similar
+    const user = firebase.auth().currentUser;
     if(user != null) {
-    //something to make follows happen
+        flowbtn.value = "FOLLOWING"; //for now this just renders a front-end 'following' text on the follow button.
+        flowbtn.color = 'black';
+        flowbtn.backgroundColor = 'lightgray'; //and change its colors. Doesnt update in the API tho.
     } else {
-    location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
+        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
     }
 }
