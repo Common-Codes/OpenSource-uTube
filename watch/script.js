@@ -9,11 +9,24 @@ window.onload = function() {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const vdata = doc.data()
-                    maestro.innerHTML = `<video style="width: 100%;" controls><source src="${vdata.src}" type="video/mp4">Your Browser does not support HTML video tags</video><br><p>${vdata.title}</p><div style="width: 100%; height: 49px; font-size: 16px; position: relative; background-color: black;"><button style="position: absolute; top: 8px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button><img src="${vdata.uploader}" style="height: 24px; width: 24px; border-radius: 50%; position: absolute; top: 10px; left: 5px;"><p style="position: absolute; top: -1px; left: 40px; color: white;">${vdata.channel}</p></div>`;
+                    maestro.innerHTML = `<video style="width: 100%;" controls><source src="${vdata.src}" type="video/mp4">Your Browser does not support HTML video tags</video><br><p>${vdata.title}</p><div style="width: 100%; height: 49px; font-size: 16px; position: relative; background-color: black;"><button id="flowbtn" onclick="followFunction()" style="position: absolute; top: 8px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button><img onclick="location.href='https://common-codes.github.io/OpenSource-uTube/c/#user=${vdata.channel}';" src="${vdata.uploader}" style="height: 24px; width: 24px; border-radius: 50%; position: absolute; top: 10px; left: 5px;"><p id="channelname" onclick="location.href='https://common-codes.github.io/OpenSource-uTube/c/#user=${vdata.channel}';" style="position: absolute; top: -1px; left: 40px; color: white;">${vdata.channel}</p></div>`;
         });
     })
     .catch((error) => {
         window.alert("Error getting data: ", error);
     });
+    }
+}
+
+const followFunction = () => {
+    const toflow = document.getElementById("channelname").innerText;
+    const flowbtn = document.getElementById("flowbtn");
+    const user = firebase.auth().currentUser;
+    if(user != null) {
+        flowbtn.value = "FOLLOWING"; //for now this just renders a front-end 'following' text on the follow button.
+        flowbtn.color = 'black';
+        flowbtn.backgroundColor = 'lightgray'; //and change its colors. Doesnt update in the API tho.
+    } else {
+        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
     }
 }

@@ -13,6 +13,7 @@
     <title>Videos | uTube</title>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
     <script>
         var config = {
             apiKey: "AIzaSyA7WMeyqjkkcwDaL2KtNjsfQvHPgm2sWLA",
@@ -25,6 +26,7 @@
         };
         firebase.initializeApp(config);
 
+        const auth = firebase.auth();
         const store = firebase.firestore();
 
         store.settings({ timestampsInSnapshots: true });
@@ -32,7 +34,11 @@
     <script src="script.js"></script>
 </head>
 <body style="background-color: black; color: white;">
-    <div id="master-div">
+    <div id="search-div" style="position: absolute; top: 0;">
+        <input type="text" placeholder="Find something interesting..." style="width: 100%;"></input>
+        <div id="login" style="position: relative;"><button onclick="location.href='https://common-codes.github.io/OpenSource-uTube/login.html'" style="background-color: crimson; color: white; position: absolute; top: -21px; right: -188px;">LOGIN</button></div>
+    </div>
+    <div id="master-div" style="position: absolute; top: 30px;">
         <img style="width: 100%; height: 180px;" src="https://http.cat/404">
         <br>
         <p>Error Loading Video: null</p>
