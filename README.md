@@ -4,9 +4,7 @@
 ## How it works:
 ### Dependencies:
 - [utubei](https://Common-Codes.github.io/utubei) - The official uTube API
-<!-- - [ffmpeg](https://ffmpeg.org) Will this be used? -->
-- [firebase/auth, firebase/firestore & firebase/rules](https://firebase.google.com) - 'Cloud', API storage and Account Authority
-- [verbose](https://verbose.crispychat.tech) - Lightweight Image Proxy
+- [firebase/auth, firebase/firestore, firebase/storage & firebase/rules](https://firebase.google.com) - 'Cloud', API storage and Account Authority
 - [Self-Hosted Plausible](https://plausible.io/docs/self-hosting) - Completely anonymous site statistics
 
 ### Storage Bukkets:
@@ -28,11 +26,6 @@
 
 If you want to fork this repo, feel free, it's Open Source for a reason.
 
-_See also:_ [Wiki](https://github.com/CKStudios2018/OpenSource-uTube/wiki)
+_See also:_ The original [Wiki](https://github.com/CKStudios2018/OpenSource-uTube/wiki)
 
-## Check out some other cool versions of OpenSource uTube:
-### Anyone who makes a fork can change or remove this section at will
-- [ByeMC's Fork](https://github.com/ByeMC/OpenSource-uTube/)
-- [Redir110's Fork](https://github.com/redir110/OpenSource-uTube/)
-- The [Common-Codes Fork](https://github.com/Common-Codes/OpenSource-uTube/)
-- Show off, by getting [your fork](https://github.com/CKStudios2018/OpenSource-uTube/discussions/7) displayed on the homepage as an ad/recommendation!
+### Show off, by getting [your fork](https://github.com/CKStudios2018/OpenSource-uTube/discussions/7) displayed on our version's homepage as an ad/recommendation!
