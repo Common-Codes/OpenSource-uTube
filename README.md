@@ -12,7 +12,7 @@
 ### Storage Bukkets:
 #### Video
 - [firebase/storage](https://firebase.google.com) 10G Free additional Cloud Storage (above the 15G already provided)
-- VS1/V1RU5 - V1RU5's up-until-now unused VPS
+- AP1/V1RU5 - V1RU5's up-until-now unused VPS
 - [Discord](https://discord.com) - [Join the server](https://discord.com/invite/Wh2zxEfYaB) to find out more
 
 #### Image
