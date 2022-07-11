@@ -29,3 +29,5 @@ const followFunction = () => {
         location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
     }
 }
+
+const loginFunction = () => {}
