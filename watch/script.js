@@ -30,4 +30,19 @@ const followFunction = () => {
     }
 }
 
-const loginFunction = () => {}
+const loginFunction = () => {
+    const flowbtn = document.getElementById("followbtn");
+    const user = firebase.auth().currentUser;
+    if(user) {
+        store.collection("user").where("id", "==", user.uid)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const cdat = doc.data()
+                    flowbtn.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
+            });
+        })
+    } else {
+        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
+    }
+}
