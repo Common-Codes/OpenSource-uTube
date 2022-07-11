@@ -31,7 +31,7 @@ const followFunction = () => {
 }
 
 const loginFunction = () => {
-    const flowbtn = document.getElementById("followbtn");
+    const flowbtn = document.getElementById("login");
     const user = firebase.auth().currentUser;
     if(user) {
         store.collection("user").where("id", "==", user.uid)
