@@ -30,3 +30,33 @@ window.onload = function(){
         })
     }
 }
+
+const followFunction = () => {
+    const toflow = document.getElementById("channelname").innerText;
+    const flowbtn = document.getElementById("followbtn");
+    const user = firebase.auth().currentUser;
+    if(user) {
+        // TO-DO: API shid so following is a thing.
+        flowbtn.innerHTML = `<button onclick="followFunction()" style="position: absolute; top: 8px; right: 16px; background-color: lightgray; color: black; height: 35px; width: 25%; border: none;">FOLLOWING</button>`;
+    } else {
+        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
+    }
+}
+
+const loginFunction = () => {
+    const flowbtn = document.getElementById("followbtn");
+    const user = firebase.auth().currentUser;
+    if(user) {
+        store.collection("user").where("id", "==", user.uid)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const cdat = doc.data()
+                    flowbtn.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
+            });
+        })
+    } else {
+        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
+    }
+}
+
