@@ -4,13 +4,14 @@ window.onload = function(){
     const fragment = new URLSearchParams(window.location.hash.slice(1));
     const [channel, debug] = [fragment.get('user'), fragment.get('dev')];
 
-    if(channel != null){ //store is a global var = firestore
+    if(channel != null) {
+    loginFunction();
         store.collection("c").where("channel", "==", channel)
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const water = doc.data()
-                    maestro.innerHTML = `<div id="profile-banner" style="position: relative;"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 48px; width: 48px; border-radius: 50%; position: absolute; top: -46px; left: 6px;"><button id="flowbtn" onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button><p id="name" style="position: absolute; top: 6px; left: 5px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers}</p><p id="counter" style="position: absolute; top: 32px; left: 5px; color: gray;">${water.videos} videos</p></div>`;
+                    maestro.innerHTML = `<div id="profile-banner" style="position: relative;"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 48px; width: 48px; border-radius: 50%; position: absolute; top: -46px; left: 6px;"><div id="followbtn"><button id="flowbtn" onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button></div><p id="name" style="position: absolute; top: 6px; left: 5px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers} followers</p><p id="counter" style="position: absolute; top: 32px; left: 5px; color: gray;">${water.videos} videos</p></div>`;
         });
     })
     .catch((error) => {
@@ -44,7 +45,7 @@ const followFunction = () => {
 }
 
 const loginFunction = () => {
-    const flowbtn = document.getElementById("followbtn");
+    const logbutt = document.getElementById("login");
     const user = firebase.auth().currentUser;
     if(user) {
         store.collection("user").where("id", "==", user.uid)
@@ -52,11 +53,11 @@ const loginFunction = () => {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const cdat = doc.data()
-                    flowbtn.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
+                    logbutt.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
             });
         })
     } else {
-        location.href="https://common-codes.github.io/uTube/login.html";
+        console.log("not logged in");
     }
 }
 
