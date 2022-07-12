@@ -31,7 +31,7 @@ const followFunction = () => {
 }
 
 const loginFunction = () => {
-    const flowbtn = document.getElementById("login");
+    const logbutt = document.getElementById("login");
     const user = firebase.auth().currentUser;
     if(user) {
         store.collection("user").where("id", "==", user.uid)
@@ -39,10 +39,10 @@ const loginFunction = () => {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const cdat = doc.data()
-                    flowbtn.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
+                    logbutt.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
             });
         })
     } else {
-        location.href="https://common-codes.github.io/uTube/login.html";
+        console.log("not logged in");
     }
 }
