@@ -24,7 +24,7 @@ window.onload = function(){
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const vdata = doc.data()
-                    const cuntent = `<div onclick="location.href='https://common-codes.github.io/OpenSource-uTube/watch/#vid=${vdata.id}'" class="video-data" style="position: relative;"><img src="${vdata.vod}" style="height: 90px; width: 150px; position: absolute; left: 5px;"><b class="video-title" style="position: absolute; left: 160px; top: 8px;">${vdata.title}</b></div><br><br><br><br><br><hr>`;
+                    const cuntent = `<div onclick="location.href='https://common-codes.github.io/uTube/watch/#vid=${vdata.id}'" class="video-data" style="position: relative;"><img src="${vdata.vod}" style="height: 90px; width: 150px; position: absolute; left: 5px;"><b class="video-title" style="position: absolute; left: 160px; top: 8px;">${vdata.title}</b></div><br><br><br><br><br><hr>`;
                     maestroContent.innerHTML += cuntent;
             })
         })
@@ -39,7 +39,7 @@ const followFunction = () => {
         // TO-DO: API shid so following is a thing.
         flowbtn.innerHTML = `<button onclick="followFunction()" style="position: absolute; top: 8px; right: 16px; background-color: lightgray; color: black; height: 35px; width: 25%; border: none;">FOLLOWING</button>`;
     } else {
-        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
+        location.href="https://common-codes.github.io/uTube/login.html";
     }
 }
 
@@ -56,7 +56,7 @@ const loginFunction = () => {
             });
         })
     } else {
-        location.href="https://common-codes.github.io/OpenSource-uTube/login.html";
+        location.href="https://common-codes.github.io/uTube/login.html";
     }
 }
 
