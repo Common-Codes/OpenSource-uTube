@@ -1,4 +1,4 @@
-# Common-Codes' OpenSource-uTube fork.
+# uTube
 > YouTube, but it's open source, and completely Google **Monetisation** free
 
 ## How it works:
@@ -24,7 +24,7 @@
 (this may cause issues, such as excessive buffering. also this keeps the original upload quality somehow.)
 
 
-If you want to fork this repo, feel free, it's Open Source for a reason.
+If you want to fork this repo, feel free, it's Open Source.
 
 _See also:_ The original [Wiki](https://github.com/CKStudios2018/OpenSource-uTube/wiki)
 
