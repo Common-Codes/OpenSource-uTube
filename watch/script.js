@@ -16,6 +16,7 @@ window.onload = function() {
         window.alert("Error getting data: ", error);
     });
     }
+    loginFunction();
 }
 
 const followFunction = () => {
@@ -39,7 +40,7 @@ const loginFunction = () => {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const cdat = doc.data()
-                    logbutt.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
+                    logbutt.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%; position: absolute; top: -20px; right: -188px;" src="${cdat.img}">`;
             });
         })
     } else {
