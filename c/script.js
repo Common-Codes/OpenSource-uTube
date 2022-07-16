@@ -11,7 +11,7 @@ window.onload = function(){
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const water = doc.data()
-                    maestro.innerHTML = `<div id="profile-banner" style="position: relative;"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 48px; width: 48px; border-radius: 50%; position: absolute; top: -46px; left: 6px;"><div id="followbtn"><button id="flowbtn" onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button></div><p id="name" style="position: absolute; top: 6px; left: 5px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers} followers</p><p id="counter" style="position: absolute; top: 32px; left: 5px; color: gray;">${water.videos} videos</p></div>`;
+                    maestro.innerHTML = `<div id="profile-banner" style="position: relative;"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 48px; width: 48px; border-radius: 50%; position: absolute; top: -46px; left: 6px;"><div id="followbtn"><button onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button></div><p id="name" style="position: absolute; top: 6px; left: 5px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers} followers</p><p id="counter" style="position: absolute; top: 32px; left: 5px; color: gray;">${water.videos} videos</p></div>`;
         });
     })
     .catch((error) => {
@@ -33,7 +33,7 @@ window.onload = function(){
 }
 
 const followFunction = () => {
-    const toflow = document.getElementById("channelname").innerText;
+    //const toflow = document.getElementById("channelname").innerText;
     const flowbtn = document.getElementById("followbtn");
     const user = firebase.auth().currentUser;
     if(user) {
@@ -47,8 +47,9 @@ const followFunction = () => {
 const loginFunction = () => {
     const logbutt = document.getElementById("login");
     const user = firebase.auth().currentUser;
+    const yeezer = user.uid;
     if(user) {
-        store.collection("user").where("id", "==", user.uid)
+        store.collection("user").where("id", "==", yeezer)
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
