@@ -3,6 +3,16 @@ window.onload = function(){
     const maestroContent = document.getElementById("videos");
     const fragment = new URLSearchParams(window.location.hash.slice(1));
     const [channel, debug] = [fragment.get('user'), fragment.get('dev')];
+    const user = auth.currentUser;
+    const logbutt = document.getElementById("login");
+
+    if(user) {
+        store.collection('c').doc(user.uid).get().then(doc => {
+            logbutt.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%; position: absolute; top: -21px; right: -188px;" src="${doc.data().img}">`;
+        }
+    } else {
+        console.log("no auth");
+    }
 
     if(channel != null) {
     loginFunction();
@@ -44,21 +54,4 @@ const followFunction = () => {
     }
 }
 
-const loginFunction = () => {
-    const logbutt = document.getElementById("login");
-    const user = firebase.auth().currentUser;
-    const yeezer = user.uid;
-    if(user) {
-        store.collection("user").where("id", "==", yeezer)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    const cdat = doc.data()
-                    logbutt.innerHTML = `<img style="width: 21px; height: 21px; border-radius: 50%;" src="${cdat.img}">`;
-            });
-        })
-    } else {
-        console.log("not logged in");
-    }
-}
 
