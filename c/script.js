@@ -21,7 +21,7 @@ window.onload = function(){
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const water = doc.data()
-                    maestro.innerHTML = `<div id="profile-banner" style="position: relative;"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 48px; width: 48px; border-radius: 50%; position: absolute; top: -46px; left: 6px;"><div id="followbtn"><button onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%;">FOLLOW</button></div><p id="name" style="position: absolute; top: 6px; left: 5px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers} followers</p><p id="counter" style="position: absolute; top: 32px; left: 5px; color: gray;">${water.videos} videos</p></div>`;
+                    maestro.innerHTML = `<div id="profile-banner" style="position: relative;"><img src="${water.banner}" style="width: 100%;"></div><br><div id="profile" style="position: relative;"><img src="${water.img}" style="height: 48px; width: 48px; border-radius: 50%; position: absolute; top: -46px; left: 6px;"><div id="followbtn"><button onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: crimson; color: white; height: 35px; width: 25%; border: none;">FOLLOW</button></div><p id="name" style="position: absolute; top: 6px; left: 5px;">${water.username}</p><p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">${water.followers} followers</p><p id="counter" style="position: absolute; top: 32px; left: 5px; color: gray;">${water.videos} videos</p></div>`;
         });
     })
     .catch((error) => {
@@ -35,7 +35,7 @@ window.onload = function(){
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const vdata = doc.data()
-                    const cuntent = `<div onclick="location.href='https://common-codes.github.io/uTube/watch/#vid=${vdata.id}'" class="video-data" style="position: relative;"><img src="${vdata.vod}" style="height: 90px; width: 150px; position: absolute; left: 5px;"><b class="video-title" style="position: absolute; left: 160px; top: 8px;">${vdata.title}</b></div><br><br><br><br><br><hr>`;
+                    const cuntent = `<div onclick="location.href='https://common-codes.github.io/uTube/watch/#vid=${vdata.id}'" class="video-data" style="position: relative; left: -5px;"><img src="${vdata.vod}" style="height: 90px; width: 150px; position: absolute; left: 5px;"><b class="video-title" style="position: absolute; left: 160px; top: 8px;">${vdata.title}</b></div><br><br><br><br><br><hr>`;
                     maestroContent.innerHTML += cuntent;
             })
         })
