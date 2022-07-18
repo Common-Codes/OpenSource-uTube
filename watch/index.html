@@ -34,8 +34,15 @@
     <script src="script.js"></script>
 </head>
 <body style="background-color: black; color: white;">
-    <div id="search-div" style="position: absolute; top: 0; width: 100%;">
-        <input type="text" placeholder="Find something interesting..." style="width: 300px;"></input>
+    <div id="search-div" style="position: fixed; top: 0; width: 100%;">
+        <input id="querygo" type="text" placeholder="Find something interesting..." style="width: 300px;"></input>
+        <button onclick="searchFunction()" style="position: absolute; top: 0; left: 260px; height: 24px; width: 48px;">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="true" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                <g>
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 13 4 10.99 4 8.5S7.01 4 8.5 4 13 6.01 13 8.5 10.99 13 8.5 13z"></path>
+                </g>
+            </svg>
+        </button>
         <div id="login" style="position: relative;"><button onclick="location.href='https://common-codes.github.io/uTube/login.html';" style="background-color: crimson; color: white; position: absolute; top: -21px; right: 16px;">LOGIN</button></div>
     </div>
     <div id="master-div" style="position: absolute; top: 30px; width: 100%;">
