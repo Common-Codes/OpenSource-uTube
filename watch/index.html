@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" typography="" typography-spacing="" standardized-themed-scrollbar="" dark="true" data-arp-injected="true">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +32,7 @@
         store.settings({ timestampsInSnapshots: true });
     </script>
     <script src="script.js"></script>
+    <script src="../auth.js"></script>
 </head>
 <body style="background-color: black; color: white;">
     <div id="search-div" style="position: fixed; top: 0; width: 100%;">
@@ -43,7 +44,9 @@
                 </g>
             </svg>
         </button>
-        <div id="login" style="position: relative;"><button onclick="location.href='https://common-codes.github.io/uTube/login.html';" style="background-color: crimson; color: white; position: absolute; top: -21px; right: 16px;">LOGIN</button></div>
+        <div id="login" style="position: relative;">
+            <button onclick="loginFunction()" style="background-color: crimson; color: white; position: absolute; top: -21px; right: 16px;">LOGIN</button>
+        </div>
     </div>
     <div id="master-div" style="position: absolute; top: 30px; width: 100%;">
         <img style="width: 100%; height: 180px;" src="https://http.cat/404">
