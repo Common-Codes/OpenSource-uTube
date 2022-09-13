@@ -11,6 +11,7 @@
 #### Video
 - [firebase/storage](https://firebase.google.com) 10G Free additional Cloud Storage (above the 15G already provided)
 - AP1/V1RU5 - V1RU5's up-until-now unused VPS
+- [Storj.io](https://storj.io) "Decentralized" Cloud Storage (150G)
 - [Discord](https://discord.com) - [Join the server](https://discord.com/invite/Wh2zxEfYaB) to find out more
 
 #### Image

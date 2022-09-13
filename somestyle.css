@@ -1,7 +1,3 @@
-#app-mount {
-    height:100%
-  }
-  
   .grid-bar {
     width:100%;
     display:-webkit-box;
@@ -99,6 +95,7 @@
     border-radius: 4px;
     border-style: solid;
     border-color: #f1f1f1;
+    background-color: black;
     font-weight: 400;
     cursor: pointer;
   }
@@ -122,8 +119,8 @@
   
   .image-img {
     margin-top: -48px;
-    width: 64px;
-    height: 64px;
+    width: 46px;
+    height: 46px;
     object-fit: cover;
     border-radius: 50%;
     background: black;
@@ -131,6 +128,7 @@
   }
   
   .video-name {
+    background-color: black;
     font-weight: 600;
     font-size: 18px;
     gap: 4px;
@@ -140,8 +138,8 @@
     -moz-box-pack: center;
     justify-content: center;
   }
-  
-  .video-id {
+
+  .video-desc {
     font-size: 13px;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -150,21 +148,13 @@
     color: white;
   }
   
-  .uploader-descriptors {
+  .uploader-desc {
     font-size: 12px;
-    margin-top: 1px;
+    margin-top: -15px;
     gap: 8px;
     display: flex;
     -moz-box-pack: justify;
     justify-content: space-between;
-  }
-  
-  .dropbtn {
-    background-color: rgba(46, 122, 118, 0.63);
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
   }
   
   .dropdown {

@@ -36,8 +36,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     });
   
   }
-  
+  function contE() {
+    sessionStorage.setItem('uid', firebase.auth().currentUser.uid);
+    location.href='https://common-codes.github.io/uTube';
+  }
   function logout(){
     firebase.auth().signOut();
+    sessionStorage.clear();
   }
   
