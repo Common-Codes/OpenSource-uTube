@@ -24,15 +24,3 @@ window.onload = function() {
     }
     loginFunction()
 }
-
-const followFunction = () => {
-    const toflow = document.getElementById("channelname").innerText;
-    const flowbtn = document.getElementById("followbtn");
-    const user = firebase.auth().currentUser;
-    if(user) {
-        // TO-DO: API shid so following is a thing.
-        flowbtn.innerHTML = `<button onclick="followFunction()" style="position: absolute; top: 8px; right: 16px; background-color: lightgray; color: black; height: 35px; width: 25%; border: none;">FOLLOWING</button>`;
-    } else {
-        location.href="https://common-codes.github.io/uTube/login.html";
-    }
-}
