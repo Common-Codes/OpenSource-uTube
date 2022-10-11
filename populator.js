@@ -39,3 +39,26 @@ function unfollowFunction(){
         location.href = 'https://common-codes.github.io/uTube/login.html'
     }
 }
+
+const populate = (data) => {
+    const fragment = new URLSearchParams(window.location.hash.slice(1));
+    const currentVid = fragment.get('vid');
+    let lists = ``
+    data.forEach(doc => {
+        const reco = doc.data();
+        if(reco.id === currentVid){
+            return;
+        } else{
+            const html = `
+            <div style="position: relative;">
+                <img src="${reco.vod}" style="width: 150px; height: 90px; cursor: pointer;" onclick="location.href='https://common-codes.github.io/uTube/watch#vid=${reco.id}';">
+                <p style="position: absolute; top: -2px; left: 155px; cursor: pointer;" onclick="location.href='https://common-codes.github.io/uTube/watch#vid=${reco.id}';">${reco.title}</p>
+                <img style="height: 16px; width: 16px; position: absolute; top: 68px; left: 163px; cursor: pointer;" src="${reco.uploader}" onclick="location.href='https://common-codes.github.io/uTube/c#user=${reco.channel}';">
+                <p style="position: absolute; top: 51px; left: 188px; cursor: pointer;" onclick="location.href='https://common-codes.github.io/uTube/c#user=${reco.channel}';">${reco.channel}</p>
+            </div><br>
+            `
+            lists += html
+        }
+    });
+    document.getElementById("recommendations").innerHTML = lists
+}

@@ -4,7 +4,6 @@ function showResults(){
             const [query, filter] = [fragment.get("q"), fragment.get("filter")];
 
             if(query != null){
-                console.log("query not null")
                 store.collection("vid").where("search", "array-contains", query)
                 .get()
                 .then((querySnapshot) => {

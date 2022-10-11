@@ -48,28 +48,6 @@
     <script src="../search.js"></script>
     <script>
         showResults();
-        /*
-        window.onload = function() {
-            console.log("onload");
-            const resulter = document.getElementById("master-div");
-            const fragment = new URLSearchParams(window.location.search.slice(1));
-            const [query, filter] = [fragment.get("q"), fragment.get("filter")];
-
-            if(query != null){
-                console.log("query not null")
-                store.collection("vid").where("search", "array-contains", query)
-                .get()
-                .then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        const rdata = doc.data()
-                        document.title = `${rdata.title}`
-                        resulter.innerHTML += `<div id="results"><img src="${rdata.vod}"><p>${rdata.title}</p></div>`
-                    })
-                }).catch((err) => console.log(err))
-            } else {
-                console.log("No data")
-            }
-        }*/
     </script>
 </body>
 </html>
