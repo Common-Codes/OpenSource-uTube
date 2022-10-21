@@ -1,0 +1,36 @@
+{
+    "name": "uTube",
+    "short_name": "uTube",
+    "start_url": "/#",
+    "lang": "en-GB",
+    "icons": [
+        {
+            "src": "icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+          },
+          {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+          }
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#5B5B5B",
+    "display": "fullscreen",
+    "orientation": "portrait"
+}
