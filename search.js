@@ -1,5 +1,5 @@
 function showResults(){
-            const resulter = document.getElementById("master-div");
+            const resulter = document.querySelector(".gridz");
             const fragment = new URLSearchParams(window.location.search.slice(1));
             const [query, filter] = [fragment.get("q"), fragment.get("filter")];
 
@@ -11,7 +11,28 @@ function showResults(){
                         const rdata = doc.data()
                         document.title = `Search results for ${query} | uTube`
                         document.getElementById("headersa").innerText = `Search Results for ${query}`
-                        resulter.innerHTML += `<div onclick="location.href='https://common-codes.github.io/uTube/watch/#vid=${rdata.id}'" class="video-data" style="position: relative; left: -5px;"><img src="${rdata.vod}" style="cursor: pointer; height: 90px; width: 150px; position: absolute; left: 5px;"><b class="video-title" style="cursor: pointer; position: absolute; left: 162px; top: 8px;">${rdata.title}</b><img style="width: 21px; height: 21px; position: absolute; left: 165px; top: 64px;" src="${rdata.uploader}"><p style="position: absolute; left: 198px; top: 48px;">${rdata.channel}</p></div><br><br><br><br><br><hr>`
+                        resulter.innerHTML += 
+                        `
+                        <div> 
+                            <div onclick="location.href='https://common-codes.github.io/uTube/watch/#vid=${rdata.id}'" class="slot" title="Watch ${rdata.title}">
+                                <div class="banner">
+                                    <img class="banner-img" src="${rdata.vod}">
+                                </div>
+                                <div class="image">
+                                    <img class="image-img" src="${rdata.uploader}">
+                                </div>
+                                <div class="video-descriptors">
+                                    <div class="video-desc">
+                                        <div class="video-name" style="cursor: pointer;">${rdata.title}</div>
+                                        <div class="owner-descriptors">
+                                            <div>
+                                                <p class="video-id">${rdata.channel}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
                     })
                 }).catch((err) => console.log(err))
             }

@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search | uTube</title>
-    <script src="../auth.js"></script>
+    <link rel="shortcut icon" href="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png" type="image/x-icon">
+    <link rel="icon" href="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png" type="image/png">
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <link rel="preload" href="../somestyle.css" as="style">
+    <link rel="stylesheet" href="../somestyle.css" data-n-g="">
     <script>
     var config = {
         apiKey: "AIzaSyA7WMeyqjkkcwDaL2KtNjsfQvHPgm2sWLA",
@@ -27,23 +30,32 @@
     store.settings({ timestampsInSnapshots: true });
   </script>
 </head>
-<body style="background-color: black; color: white;">
-    <div id="search-div" style="position: fixed; top: 0; width: 100%;">
-      <input onkeypress="13" id="querygo" type="text" placeholder="Find something interesting..." style="width: 300px;"></input>
-      <button onclick="searchFunction()" style="cursor: pointer; position: absolute; top: 0; left: 260px; height: 24px; width: 48px;">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="true" style="pointer-events: none; display: block; width: 100%; height: 100%;">
-              <g>
-                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 13 4 10.99 4 8.5S7.01 4 8.5 4 13 6.01 13 8.5 10.99 13 8.5 13z"></path>
-              </g>
-          </svg>
-      </button>
-      <div id="login" style="position: relative;">
-        <button onclick="loginFunction()" style="background-color: crimson; color: white; position: absolute; top: -21px; right: 16px;">LOGIN</button>
-      </div>
+<body>
+    <div id="title" style="position: relative;">
+        <div class="logo" style="position: absolute;">
+            <img src="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png" style="height: 60px; width: 60px;" title="uTube Logo" style="position: absolute; left: 0;" alt="uTube_Logo" onclick="location.href='/'">
+        </div>
     </div>
-    <div class="app-container" style="position: absolute; top: 32px; width: 100%;">
+    <div class="row-31oovZ header-V8Sgnz">
+        <header class="wrapper-2bm6Le">
+            <nav class="nav-3_Sybl">
+                <div id="search-div" style="position: relative; top: 0; width: 100%;">
+                    <input id="querygo" type="text" placeholder="Find something interesting..." style="width: 50%; position: relative; top: 0; left: 18%;">
+                        <button onclick="searchFunction()" style="border: none; cursor: pointer; height: 22px; width: 32px; position: absolute; top: 0; left: 69.5%;">
+                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="true" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                                <g>
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 13 4 10.99 4 8.5S7.01 4 8.5 4 13 6.01 13 8.5 10.99 13 8.5 13z"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </input>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="app-container">
         <h2 id="headersa"></h2>
-        <div id="master-div"></div>
+        <div class="gridz"></div>
     </div>
     <script src="../search.js"></script>
     <script>
