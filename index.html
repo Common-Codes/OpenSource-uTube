@@ -69,77 +69,110 @@
   </script>
 </head>
 <body>
-  <div id="title" style="position: relative;">
-    <div class="logo" style="position: absolute;">
-        <img src="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png" style="height: 60px; width: 60px;" title="uTube Logo" style="position: absolute; left: 0;" alt="uTube_Logo" onclick="location.href='/'">
+    <div id="title" style="position: relative;">
+        <div class="logo" style="position: absolute;">
+            <img src="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png" style="height: 60px; width: 60px;" title="uTube Logo" style="position: absolute; left: 0;" alt="uTube_Logo" onclick="location.href='/'">
+        </div>
     </div>
-  </div>
-  <div class="row-31oovZ header-V8Sgnz">
-      <header class="wrapper-2bm6Le">
-          <nav class="nav-3_Sybl">
-              <div id="search-div" style="position: relative; top: 0; width: 100%;">
-                  <input id="querygo" type="text" placeholder="Find something interesting..." style="width: 50%; position: relative; top: 0; left: 16%;">
-                      <button onclick="searchFunction()" style="border: none; cursor: pointer; height: 22px; width: 32px; position: absolute; top: 0; left: 67%;">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="true" style="pointer-events: none; display: block; width: 100%; height: 100%;">
-                              <g>
-                                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 13 4 10.99 4 8.5S7.01 4 8.5 4 13 6.01 13 8.5 10.99 13 8.5 13z"></path>
-                              </g>
-                          </svg>
-                      </button>
-                  </input>
-                  <div id="login" style="position: relative;">
-                      <button onclick="loginFunction()" style="border: none; background-color: crimson; color: white; position: absolute; top: -20px; right: 5%;">LOGIN</button>
-                  </div>
-              </div>
-          </nav>
-      </header>
-  </div>
+    <div class="row-31oovZ header-V8Sgnz">
+        <header class="wrapper-2bm6Le">
+            <nav class="nav-3_Sybl">
+                <div id="search-div" style="position: relative; top: 0; width: 100%;">
+                    <input id="querygo" type="text" placeholder="Find something interesting..." style="width: 50%; position: relative; top: 0; left: 16%;">
+                        <button onclick="searchFunction()" style="border: none; cursor: pointer; height: 22px; width: 32px; position: absolute; top: 0; left: 67%;">
+                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="true" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                                <g>
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 13 4 10.99 4 8.5S7.01 4 8.5 4 13 6.01 13 8.5 10.99 13 8.5 13z"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </input>
+                    <div id="login" style="position: relative;">
+                        <button onclick="loginFunction()" style="border: none; background-color: crimson; color: white; position: absolute; top: -20px; right: 5%;">LOGIN</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
 
-  <div class="app-container">
-      <div class="gridz"></div>
-  </div>
-  <script>
-      const container = document.querySelector('.gridz');
+    <div class="app-container">
+        <div class="gridz"></div>
+    </div>
+    <script>
+        const container = document.querySelector('.gridz');
 
-      store.collection('vid').get().then(snapshot => {
-          setupSite(snapshot.docs);
-      });
+        store.collection('vid').get().then(snapshot => {
+            setupSite(snapshot.docs);
+        });
 
-      const setupSite = (data) => {
-          let html = ``;
-          data.forEach(doc => {
-              const video = doc.data();
-              const li = `
-              <div>
-                  <div class="slot">
-                      <div class="banner" onclick="location.href='https://common-codes.github.io/uTube/watch#vid=${video.id}';" title="Watch ${video.title}">
-                          <img class="banner-img" src="${video.vod}">
-                      </div>
-                      <div class="image">
-                          <img class="image-img" src="${video.uploader}" onclick="location.href='https://common-codes.github.io/uTube/c#user=${video.channel}';" title="Go to ${video.channel}'s Channel">
-                      </div>
-                      <div class="video-descriptors">
-                          <div class="video-desc" onclick="location.href='https://common-codes.github.io/uTube/watch#vid=${video.id}';" title="Watch ${video.title}">
-                              <div class="video-name">${video.title}</div>
-                              <div class="owner-descriptors">
-                                  <div>
-                                      <p id="video-id">${video.channel}</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              `;
-              html += li
-          });
-          container.innerHTML = html;
-      }
-  </script>
-  <script>
+        const setupSite = (data) => {
+            let totalVid = 0;
+            let list = []
+            data.forEach(doc => {
+                const video = doc.data();
+                totalVid++
+                list[totalVid] = `${video.id}`;
+            });
+            shuffle(list);
+            setTimeout(function(){displaySite(list)}, 100)
+        }
+
+        const displaySite = (data) => {
+            data.forEach((div) => {
+                if(div != undefined){
+                    store.collection('vid').where("id", "==", div).get().then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            const video = doc.data();
+                            const li = `
+                            <div>
+                                <div class="slot">
+                                    <div class="banner" onclick="location.href='https://common-codes.github.io/uTube/watch#vid=${video.id}';" title="Watch ${video.title}">
+                                        <img class="banner-img" src="${video.vod}">
+                                    </div>
+                                    <div class="image">
+                                        <img class="image-img" src="${video.uploader}" onclick="location.href='https://common-codes.github.io/uTube/c#user=${video.channel}';" title="Go to ${video.channel}'s Channel">
+                                    </div>
+                                    <div class="video-descriptors">
+                                        <div class="video-desc" onclick="location.href='https://common-codes.github.io/uTube/watch#vid=${video.id}';" title="Watch ${video.title}">
+                                            <div class="video-name">${video.title}</div>
+                                            <div class="owner-descriptors">
+                                                <div>
+                                                    <p id="video-id">${video.channel}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                            container.innerHTML += li;
+                        })
+                    })
+                } else {
+                    return;
+                }
+            })
+        }
+    </script>
+    <script>
+    function shuffle(array) {
+        var m = array.length, t, i;
+        
+        while(m){
+            i = Math.floor(Math.random() * m--);
+
+            t = array[m];
+            array[m] = array[i];
+            array[i] = t;
+        }
+
+        return array;
+    }
+    </script>
+    <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/mobile.js');
     }
-</script>
+    </script>
 </body>
 </html>

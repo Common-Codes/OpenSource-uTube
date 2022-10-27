@@ -2,15 +2,16 @@ function showResults(){
             const resulter = document.querySelector(".gridz");
             const fragment = new URLSearchParams(window.location.search.slice(1));
             const [query, filter] = [fragment.get("q"), fragment.get("filter")];
+            const filler = query.toLowerCase();
 
             if(query != null){
-                store.collection("vid").where("search", "array-contains", query)
+                store.collection("vid").where("search", "array-contains", filler)
                 .get()
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const rdata = doc.data()
-                        document.title = `Search results for ${query} | uTube`
-                        document.getElementById("headersa").innerText = `Search Results for ${query}`
+                        document.title = `Search results for ${filler} | uTube`
+                        document.getElementById("headersa").innerText = `Search Results for ${filler}`
                         resulter.innerHTML += 
                         `
                         <div> 
