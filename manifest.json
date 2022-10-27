@@ -29,6 +29,15 @@
             "purpose": "maskable"
           }
     ],
+    "shortcuts": [
+      {
+        "name": "Your Channel",
+        "short_name": "Channel",
+        "description": "Access Your Channel",
+        "url": "/c/@me",
+        "icons": [{ "src": "icons/manifest-icon-192.maskable.png" }]
+      }
+    ],
     "theme_color": "#FFFFFF",
     "background_color": "#5B5B5B",
     "display": "fullscreen",
