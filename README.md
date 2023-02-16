@@ -15,7 +15,7 @@
 - [Discord](https://discord.com) - [Join the server](https://discord.com/invite/Wh2zxEfYaB) to find out more
 
 #### Image
-- [ut3.ggpht.ga](https://tallerthanshort.github.io/ut3.ggpht/) - The third uTube CDN (github pages site with some site images)
+- [ut3.ggpht](https://tallerthanshort.github.io/ut3.ggpht/) - The third uTube CDN (github pages site with some site images)
 - [Discord](https://discord.com) - [Join the server](https://discord.com/invite/Wh2zxEfYaB) to find out more
 
 ### Some description:

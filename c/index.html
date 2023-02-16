@@ -11,9 +11,9 @@
     <meta property="og:image" content="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png">
     <meta property="og:description" content="Browse your favorite channels, follow incredible content creators and more | uTube">
     <title>Channels | uTube</title>
-    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
     <script>
         var config = {
             apiKey: "AIzaSyA7WMeyqjkkcwDaL2KtNjsfQvHPgm2sWLA",
@@ -29,7 +29,7 @@
         const auth = firebase.auth();
         const store = firebase.firestore();
 
-        store.settings({ timestampsInSnapshots: true });
+        //store.settings({ timestampsInSnapshots: true });
     </script>
     <script src="script.js"></script>
     <script src="../populator.js" defer></script>
@@ -54,7 +54,7 @@
         </div>
         <br>
         <div id="profile" style="position: relative;">
-             <img src="https://ggpht.ga/icons/utube.png" style="height: 46px; width: 46px; position: absolute; top: -46px; left: 6px; border-radius: 50%;">
+             <img src="https://tallerthanshort.github.io/ut3.ggpht/icons/utube.png" style="height: 46px; width: 46px; position: absolute; top: -46px; left: 6px; border-radius: 50%;">
              <button id="flowbutt" onclick="followFunction()" style="position: absolute; top: 18px; right: 16px; background-color: lightgray; color: black; height: 35px; width: 25%;">FOLLOWING</button>
              <p id="name" style="position: absolute; top: 6px; left: 5px;">channel</p>
              <p id="followers" style="position: absolute; top: -21px; right: 15px; color: gray;">followers</p>
